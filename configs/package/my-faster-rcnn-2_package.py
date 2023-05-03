@@ -16,7 +16,7 @@ model = dict(
         norm_cfg=dict(type='SyncBN', requires_grad=True),
         norm_eval=False,
         style='pytorch',
-        ),
+        init_cfg=dict(type='Pretrained', checkpoint='open-mmlab://resnest101')),
     neck=dict(
             type='PAFPN',
             in_channels=[256, 512, 1024, 2048],
@@ -35,7 +35,7 @@ data_root = 'data/package/'
 palette = [(220, 20, 60), (119, 11, 32), (0, 0, 142), (0, 0, 230), (106, 0, 228)]
 
 train_dataloader = dict(
-    batch_size=8,
+    batch_size=4,
     dataset=dict(
         data_root=data_root,
         ann_file='train2017/_annotations.coco.json',
@@ -43,7 +43,7 @@ train_dataloader = dict(
     )
 )
 val_dataloader = dict(
-    batch_size=4,
+    batch_size=2,
     dataset=dict(
         data_root=data_root,
         ann_file='val2017/_annotations.coco.json',
@@ -52,7 +52,7 @@ val_dataloader = dict(
     )
 )
 test_dataloader = dict(
-    batch_size=2,
+    batch_size=1,
     dataset=dict(
         data_root=data_root,
         ann_file='test2017/_annotations.coco.json',
