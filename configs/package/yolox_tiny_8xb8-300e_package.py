@@ -12,7 +12,7 @@ data_root = 'data/package/'
 palette = [(220, 20, 60), (119, 11, 32), (0, 0, 142), (0, 0, 230), (106, 0, 228)]
 
 train_dataset = dict(
-    batch_size=8,
+    batch_size=24,
     dataset=dict(
         data_root=data_root,
         ann_file='train2017/_annotations.coco.json',
@@ -20,7 +20,7 @@ train_dataset = dict(
     )
 )
 val_dataset = dict(
-    batch_size=4,
+    batch_size=8,
     dataset=dict(
         data_root=data_root,
         ann_file='val2017/_annotations.coco.json',
@@ -29,7 +29,7 @@ val_dataset = dict(
     )
 )
 test_dataset = dict(
-    batch_size=2,
+    batch_size=4,
     dataset=dict(
         data_root=data_root,
         ann_file='test2017/_annotations.coco.json',
