@@ -83,7 +83,7 @@ test_evaluator = val_evaluator
 #     dataset=dict(
 #         type=dataset_type,
 #         data_root=data_root,
-#         ann_file=data_root + 'annotations/image_info_test-dev2017.json',
+#         ann_file=data_root + 'test2017/_annotations.coco.json',
 #         data_prefix=dict(img='test2017/'),
 #         test_mode=True,
 #         pipeline=test_pipeline))
@@ -91,5 +91,5 @@ test_evaluator = val_evaluator
 #     type='CocoMetric',
 #     metric='bbox',
 #     format_only=True,
-#     ann_file=data_root + 'annotations/image_info_test-dev2017.json',
+#     ann_file=data_root + 'test2017/_annotations.coco.json',
 #     outfile_prefix='./work_dirs/coco_detection/test')

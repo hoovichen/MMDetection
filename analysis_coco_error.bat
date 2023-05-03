@@ -1,0 +1,1 @@
+python tools/analysis_tools/coco_error_analysis.py work_dirs/faster-rcnn_r101_fpn_1x_package/20230425_002134/test.bbox.json work_dirs/faster-rcnn_r101_fpn_1x_package/20230424_232518/work_dirs/faster-rcnn_r101_fpn_1x_package/results/imgs --ann=data/coco/test2017/_annotations.coco.json

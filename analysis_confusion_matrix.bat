@@ -1,0 +1,1 @@
+python tools/analysis_tools/confusion_matrix.py configs/package/faster-rcnn_r101_fpn_1x_package.py work_dirs/faster-rcnn_r101_fpn_1x_package/results/faster_rcnn_r101_result_120.pkl work_dirs/faster-rcnn_r101_fpn_1x_package/results --show

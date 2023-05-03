@@ -145,7 +145,7 @@ val_evaluator = dict(
     backend_args=backend_args)
 test_evaluator = val_evaluator
 
-train_cfg = dict(max_epochs=12, val_interval=7)
+train_cfg = dict(max_epochs=264, val_interval=7)
 
 # optimizer
 optim_wrapper = dict(

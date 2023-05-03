@@ -1,9 +1,14 @@
 # The new config inherits a base config to highlight the necessary modification
 _base_ = '../faster_rcnn/faster-rcnn_r101-caffe_fpn_1x_coco.py'
+# _base_.visualizer.vis_backends = [
+# dict(type='LocalVisBackend'),
+# dict(type='TensorboardVisBackend'),
+# dict(type='WandbVisBackend'),]
 
 # We also need to change the num_classes in head to match the dataset's annotation
 model = dict(
     roi_head=dict(
+        type='FreeAnchorRetinaHead',
         bbox_head=dict(num_classes=5),
         ))
 
@@ -46,6 +51,7 @@ test_evaluator = dict(
 )
 optimizer = dict(type='SGD', lr=0.01, momentum=0.9, weight_decay=0.0001)
 optim_wrapper = dict(type='AmpOptimWrapper', optimizer=optimizer, accumulative_counts=2)
+train_cfg = dict(max_epochs=12, val_interval=7)
 
 # We can use the pre-trained Mask RCNN model to obtain higher performance
 load_from = './model/resnet101_caffe.pth'

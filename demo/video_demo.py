@@ -1,6 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import argparse
-
+import time
 import cv2
 import mmcv
 from mmcv.transforms import Compose
@@ -56,7 +56,8 @@ def main():
         video_writer = cv2.VideoWriter(
             args.out, fourcc, video_reader.fps,
             (video_reader.width, video_reader.height))
-
+    now = time.time()
+    count = 0
     for frame in track_iter_progress(video_reader):
         result = inference_detector(model, frame, test_pipeline=test_pipeline)
         visualizer.add_datasample(
@@ -67,10 +68,17 @@ def main():
             show=False,
             pred_score_thr=args.score_thr)
         frame = visualizer.get_image()
-
+        end = time.time()
         if args.show:
+            count += 1
+            if end - now >= 1:
+                now = time.time()
+                cv2.putText(frame, str(count), (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255))
+                count = 0
             cv2.namedWindow('video', 0)
+
             mmcv.imshow(frame, 'video', args.wait_time)
+
         if args.out:
             video_writer.write(frame)
 

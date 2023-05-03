@@ -1,1 +1,1 @@
-python tools/analysis_tools/analyze_logs.py  plot_curve ./work_dirs/faster-rcnn_r101_fpn_1x_package/20230422_195008/vis_data/20230422_195008.json --keys loss_cls loss_bbox --legend loss_cls loss_box
+python tools/test.py configs/package/my-faster-rcnn_package.py work_dirs/my-faster-rcnn_package/epoch_120.pth --out work_dirs/my-faster-rcnn_package/results/faster_rcnn_r101_epoch_120.pkl

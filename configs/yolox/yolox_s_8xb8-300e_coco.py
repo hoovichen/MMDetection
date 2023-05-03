@@ -39,7 +39,7 @@ model = dict(
         act_cfg=dict(type='Swish')),
     bbox_head=dict(
         type='YOLOXHead',
-        num_classes=80,
+        num_classes=5,
         in_channels=128,
         feat_channels=128,
         stacked_convs=2,
@@ -124,7 +124,7 @@ train_dataset = dict(
     dataset=dict(
         type=dataset_type,
         data_root=data_root,
-        ann_file='annotations/instances_train2017.json',
+        ann_file='train2017/_annotations.coco.json',
         data_prefix=dict(img='train2017/'),
         pipeline=[
             dict(type='LoadImageFromFile', backend_args=backend_args),
@@ -163,7 +163,7 @@ val_dataloader = dict(
     dataset=dict(
         type=dataset_type,
         data_root=data_root,
-        ann_file='annotations/instances_val2017.json',
+        ann_file='val2017/_annotations.coco.json',
         data_prefix=dict(img='val2017/'),
         test_mode=True,
         pipeline=test_pipeline,
@@ -172,7 +172,7 @@ test_dataloader = val_dataloader
 
 val_evaluator = dict(
     type='CocoMetric',
-    ann_file=data_root + 'annotations/instances_val2017.json',
+    ann_file=data_root + 'val2017/_annotations.coco.json',
     metric='bbox',
     backend_args=backend_args)
 test_evaluator = val_evaluator

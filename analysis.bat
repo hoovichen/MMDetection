@@ -1,0 +1,1 @@
+python tools/analysis_tools/analyze_results.py work_dirs/my-faster-rcnn_package/my-faster-rcnn_package.py work_dirs/my-faster-rcnn_package/results/faster_rcnn_r101_epoch_120.pkl work_dirs/my-faster-rcnn_package/results

@@ -1,0 +1,1 @@
+python demo/image_demo.py demoImage work_dirs/my-faster-rcnn_package/epoch_120.pth --show
