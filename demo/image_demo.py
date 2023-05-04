@@ -23,7 +23,7 @@ Example:
 """
 
 from argparse import ArgumentParser
-
+import time
 from mmengine.logging import print_log
 
 from mmdet.apis import DetInferencer
@@ -97,16 +97,19 @@ def parse_args():
 
 
 def main():
+
     init_args, call_args = parse_args()
     # TODO: Video and Webcam are currently not supported and
     #  may consume too much memory if your input folder has a lot of images.
     #  We will be optimized later.
     inferencer = DetInferencer(**init_args)
+    timer = time.time()
     inferencer(**call_args)
 
     if call_args['out_dir'] != '' and not (call_args['no_save_vis']
                                            and call_args['no_save_pred']):
         print_log(f'results have been saved at {call_args["out_dir"]}')
+    print(time.time() - timer)
 
 
 if __name__ == '__main__':

@@ -1,1 +1,1 @@
-python tools/train.py configs/package/my-faster-rcnn-2_package.py
+python tools/train.py configs/package/faster-rcnn_s101_fpn_syncbn-backbone+head_ms-range-1x_package.py
