@@ -1,1 +1,1 @@
-python demo/video_demo.py demoImage/test.mp4 work_dirs/fast-rcnn_r101_fpn_1x_package/fast-rcnn_r101_fpn_1x_package.py work_dirs/fast-rcnn_r101_fpn_1x_package/epoch_12.pth --out result2mp4/result_only_rpn.mp4 --score-thr 0.5
+python demo/video_demo.py demoImage/testing4.mp4 configs/package/faster-rcnn_r101_fpn_1x_package.py work_dirs/faster-rcnn_r101_fpn_1x_package/epoch_120.pth --show --out result2mp4/result_only_fpn.mp4 --score-thr 0.5

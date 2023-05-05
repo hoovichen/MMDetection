@@ -8,7 +8,6 @@ _base_ = '../faster_rcnn/faster-rcnn_r101-caffe_fpn_1x_coco.py'
 # We also need to change the num_classes in head to match the dataset's annotation
 model = dict(
     roi_head=dict(
-        type='FreeAnchorRetinaHead',
         bbox_head=dict(num_classes=5),
         ))
 

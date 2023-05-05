@@ -1,1 +1,1 @@
-python tools/analysis_tools/eval_metric.py work_dirs/my-faster-rcnn_package/my-faster-rcnn_package.py work_dirs/my-faster-rcnn_package/results/faster_rcnn_r101_epoch_120.pkl
+python tools/analysis_tools/eval_metric.py configs/package/my-faster-rcnn_package.py work_dirs/my-faster-rcnn_package/results/faster_rcnn_r101_epoch_120.pkl

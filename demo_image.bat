@@ -1,1 +1,1 @@
-python demo/image_demo.py demoImage/package.png work_dirs/faster-rcnn_r101_fpn_1x_package/epoch_120.pth --show
+python demo/image_demo.py demoImage/ work_dirs/my-faster-rcnn_package/epoch_120.pth --show
